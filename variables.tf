@@ -386,7 +386,7 @@ variable "tenancy" {
 }
 
 variable "additional_ips_eip_enabled" {
-  type             = bool
-  default          = true
-  descrdescription = "Whether the additional IPs are assigned an EIP"
+  type        = bool
+  default     = true
+  description = "Whether the additional IPs are assigned an EIP"
 }
