@@ -384,3 +384,9 @@ variable "tenancy" {
     error_message = "Tenancy field can only be one of default, dedicated, host."
   }
 }
+
+variable "additional_ips_eip_enabled" {
+  type             = bool
+  default          = true
+  descrdescription = "Whether the additional IPs are assigned an EIP"
+}

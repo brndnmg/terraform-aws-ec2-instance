@@ -24,7 +24,7 @@ resource "aws_network_interface_attachment" "additional" {
 }
 
 resource "aws_eip" "additional" {
-  count             = local.additional_ips_count
+  count             = var.additional_ips_eip_enabled ? local.additional_ips_count : 0
   vpc               = true
   network_interface = aws_network_interface.additional[count.index].id
 }
