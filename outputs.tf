@@ -68,7 +68,10 @@ output "additional_eni_ids" {
   value = length(aws_eip.additional.*.public_ip) > 0 ? zipmap(
     aws_network_interface.additional.*.id,
     aws_eip.additional.*.public_ip
-  ) : aws_network_interface.additional.*.id
+    ) : zipmap(
+    aws_network_interface.additional.*.id,
+    aws_network_interface.additional.*.private_dns_name
+  )
 }
 
 output "ebs_ids" {
